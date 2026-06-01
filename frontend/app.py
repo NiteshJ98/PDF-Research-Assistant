@@ -2,7 +2,7 @@
 import streamlit as st
 import requests, os
 
-API = os.getenv("API_URL", "http://127.0.0.1:8000")
+API = os.getenv("API_URL", "https://pdf-research-assistant.onrender.com")
 
 st.set_page_config(
     page_title="PDF Research Assistant",
