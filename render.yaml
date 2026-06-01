@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: pdf-research-assistant
+    env: python # or node, docker, static, etc.
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.main:app --reload
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
