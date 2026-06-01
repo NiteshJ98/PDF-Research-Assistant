@@ -1,0 +1,17 @@
+# Backend API & Server
+fastapi
+uvicorn
+python-multipart
+python-dotenv
+
+# Frontend UI
+streamlit
+
+# Vector Database & Text Processing
+chromadb
+sentence-transformers
+langchain-text-splitters
+pypdf2
+
+# AI / LLM Client (Groq-compatible)
+groq
