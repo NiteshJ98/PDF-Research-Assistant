@@ -1,6 +1,17 @@
-services:
-  - type: web
-    name: pdf-research-assistant
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python -m uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+name: Sync to Hugging Face Hub
+on:
+  push:
+    branches: [main]
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+      - uses: huggingface/hub-sync@v0.1.0
+        with:
+          github_repo_id: ${{ github.repository }}
+          huggingface_repo_id: Niteshj007/pdf-assistant-backend
+          hf_token: ${{ secrets.HF_TOKEN }}
